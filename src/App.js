@@ -1,6 +1,5 @@
 import React, { createContext, useState } from 'react';
 import ProductList from './components/ProductList';
-import ProductSearch from './components/ProductSearch';
 import ThemeToggle from './components/ThemeToggle';
 
 // TODO: Exercice 2.1 - Créer le LanguageContext
@@ -23,7 +22,6 @@ const App = () => {
           </div>
         </header>
         <main>
-          <ProductSearch />
           <ProductList />
         </main>
       </div>
@@ -31,4 +29,4 @@ const App = () => {
   );
 };
 
-export default App
+export default App;
