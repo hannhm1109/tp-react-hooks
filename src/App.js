@@ -1,13 +1,14 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext } from 'react';
 import ProductList from './components/ProductList';
 import ThemeToggle from './components/ThemeToggle';
 import LanguageSelector from './components/LanguageSelector';
 import { LanguageProvider } from './contexts/LanguageContext';
+import useLocalStorage from './hooks/useLocalStorage';
 
 export const ThemeContext = createContext();
 
 const App = () => {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useLocalStorage('theme', false);
 
   return (
     <ThemeContext.Provider value={{ isDarkTheme, setIsDarkTheme }}>
