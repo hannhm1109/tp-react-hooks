@@ -1,3 +1,4 @@
+// src/hooks/useProductSearch.js
 import { useState, useEffect } from 'react';
 import { useDebounce } from './useDebounce';
 
@@ -12,17 +13,22 @@ const useProductSearch = (searchTerm = '') => {
     const fetchProducts = async () => {
       setLoading(true);
       try {
+        console.log('Fetching products with search term:', debouncedSearchTerm);
         const response = await fetch(
-          `https://api.daaif.net/products?delay=1000${
-            debouncedSearchTerm ? `&search=${debouncedSearchTerm}` : ''
-          }`
+          `https://dummyjson.com/products/search?q=${debouncedSearchTerm}`
         );
+        console.log('Response status:', response.status);
+        
         if (!response.ok) throw new Error('Erreur réseau');
         const data = await response.json();
-        setProducts(data.products);
+        console.log('Received data:', data);
+
+        setProducts(data.products || []);
         setError(null);
       } catch (err) {
+        console.error('Error:', err);
         setError(err.message);
+        setProducts([]);
       } finally {
         setLoading(false);
       }
