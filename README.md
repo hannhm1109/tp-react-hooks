@@ -61,4 +61,25 @@ J'ai créé deux hooks personnalisés pour améliorer la réutilisabilité et la
 
 ![exercice3](https://github.com/user-attachments/assets/ac9ce416-daa5-413e-a6df-05c21fafba53)
 
+# Exercice 4 : Gestion Asynchrone et Pagination
+
+## Solution Implémentée
+
+### 1. Ajout du Bouton de Rechargement
+* Implémentation d'un bouton de rechargement (↻) pour rafraîchir les données
+* Intégration avec le thème sombre/clair existant
+* Gestion des états de chargement pendant le rechargement
+
+### 2. Implémentation de la Pagination
+* Limitation à 9 produits par page
+* Maximum de 9 pages affichées
+* Navigation intuitive avec flèches (← →)
+* Conservation du thème et de la langue sur toutes les pages
+
+### 3. Fonctionnalités Clés
+* `useProductSearch` hook amélioré :
+  ```javascript
+  const { products, loading, error, totalPages, reloadData } = useProductSearch(searchTerm, currentPage);
+
+![exercice4](https://github.com/user-attachments/assets/8ec7873e-2047-46a9-aa32-dc9dfe525a68)
 
