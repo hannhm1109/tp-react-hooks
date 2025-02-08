@@ -52,20 +52,13 @@ J'ai créé deux hooks personnalisés pour améliorer la réutilisabilité et la
    * Réduction des appels API pendant la saisie de recherche
    * Implémenté dans le composant ProductSearch
 
-```javascript
-// Exemple d'utilisation dans ProductSearch
-const debouncedValue = useDebounce(searchTerm, 500);
+2. **useLocalStorage Hook** :
 
-// Définition du hook
-export const useDebounce = (value, delay = 500) => {
-  const [debouncedValue, setDebouncedValue] = useState(value);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setDebouncedValue(value);
-    }, delay);
-    return () => clearTimeout(timer);
-  }, [value, delay]);
-  return debouncedValue;
-};
+* Persistance des préférences utilisateur
+* Synchronisation automatique avec localStorage
+* Gestion des erreurs intégrée
+* Utilisé pour le thème et la langue
 
-![exercice3](https://github.com/user-attachments/assets/69461134-a359-492c-b1af-e6f5f20b8675)
+![exercice3](https://github.com/user-attachments/assets/ac9ce416-daa5-413e-a6df-05c21fafba53)
+
+
