@@ -12,7 +12,10 @@ const translations = {
     price: 'Prix:',
     darkMode: 'Mode Sombre',
     lightMode: 'Mode Clair',
-    language: 'Langue'
+    language: 'Langue',
+    previous: 'Précédent',
+    next: 'Suivant',
+    reload: 'Recharger'
   },
   en: {
     title: 'Product Catalog',
@@ -22,7 +25,10 @@ const translations = {
     price: 'Price:',
     darkMode: 'Dark Mode',
     lightMode: 'Light Mode',
-    language: 'Language'
+    language: 'Language',
+    previous: 'Previous',
+    next: 'Next',
+    reload: 'Reload'
   }
 };
 
