@@ -40,3 +40,32 @@ Pour cet exercice, j'ai mis en place un système d'internationalisation avec les
 - Placeholders des champs de recherche
 
 ![exercice2](https://github.com/user-attachments/assets/a4dbc638-c47f-411b-9bb1-6dafa503ac79)
+
+# Exercice 3 : Hooks Personnalisés
+Solution Implémentée
+
+J'ai créé deux hooks personnalisés pour améliorer la réutilisabilité et la gestion d'état dans l'application de catalogue de produits :
+
+1. **useDebounce Hook** :
+   * Optimisation des recherches en temps réel
+   * Délai paramétrable (500ms par défaut)
+   * Réduction des appels API pendant la saisie de recherche
+   * Implémenté dans le composant ProductSearch
+
+```javascript
+// Exemple d'utilisation dans ProductSearch
+const debouncedValue = useDebounce(searchTerm, 500);
+
+// Définition du hook
+export const useDebounce = (value, delay = 500) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+    return () => clearTimeout(timer);
+  }, [value, delay]);
+  return debouncedValue;
+};
+
+![exercice3](https://github.com/user-attachments/assets/69461134-a359-492c-b1af-e6f5f20b8675)
